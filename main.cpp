@@ -34,6 +34,47 @@ void loadImage () {
 
 // Add Your filters here, then unComment your filter function in filter choice function or Add it .
 
+void rotateImage(){
+
+    unsigned char newImage[SIZE][SIZE][RGB];
+    int rotationChoice = 1 ;
+    cout << "Press 1 for 90 degree rotation\nPress 2 for 180 degree rotation\nPress 3 for 270 degree rotation";
+    cin >> rotationChoice;
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            for (int k = 0; k < RGB; ++k) {
+
+
+                switch (rotationChoice) {
+                    case 1 :
+                        // 90 degree rotation
+                        newImage[i][j][k] = image[SIZE - 1 - j][i][k];
+                        break;
+                    case 2 :
+                        // 180 degree rotation
+                        newImage[i][j][k] = image[SIZE - 1 - i][SIZE - 1 - j][k];
+                        break;
+                    case 3 :
+                        // 270 degree rotation
+                        newImage[i][j][k] = image[j][SIZE - 1 - i][k];
+                        break;
+                    default :
+                        break;
+                }
+            }
+        }
+    }
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; ++j) {
+            for (int k = 0; k < RGB; ++k) {
+
+
+                image[i][j][k] = newImage[i][j][k];
+            }
+        }
+    }
+}
+
 
 
 
@@ -86,7 +127,7 @@ void filterChoice(){
                     validInput = true;
                     break;
                 case 3 :
-                   // rotateImage();
+                    rotateImage();
                     validInput = true;
                     break;
                 case 4 :
