@@ -1,7 +1,9 @@
 #include <iostream>
 #include <cstring>
+#include <cmath>
 #include "bmplib.cpp"
 #include "bmplib.h"
+
 using namespace std;
 
 
@@ -74,44 +76,6 @@ void rotateImage(){
         }
     }
 }
-
-void darken_lighten(){
-    unsigned char image2[SIZE][SIZE][RGB];
-    int choice ;
-    cout <<"enter 0 to darken or 1 to lighten : ";
-    cin >> choice;
-    if (choice == 0 ){
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
-                for (int k = 0; k < RGB; ++k) {
-
-                    image2[i][j][k] = (image[i][j][k] / 2 );
-                }
-
-            }
-        }
-    }
-    else if (choice==1){
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
-                for (int k = 0; k <RGB ; ++k) {
-
-                    image2[i][j][k] =  (pow(image[i][j][k],.8)-120) ;
-                }
-
-            }
-        }
-    }
-     for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
-                for (int k = 0; k <RGB ; ++k) {
-                        image[i][j][k]=image2[i][j][k];
-
-                }
-            }
-     }
-            }
-
 
 bool isShuffleValid(string& word){
     for(char& c : word){
@@ -227,6 +191,47 @@ void shuffleImage(){
 
 
 }
+
+
+void darken_lighten(){
+    unsigned char image2[SIZE][SIZE][RGB];
+    int choice ;
+    cout <<"enter 0 to darken or 1 to lighten : ";
+    cin >> choice;
+    if (choice == 0 ){
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                for (int k = 0; k < RGB; ++k) {
+
+                    image2[i][j][k] = (image[i][j][k] / 2 );
+                }
+
+            }
+        }
+    }
+    else if (choice==1){
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                for (int k = 0; k <RGB ; ++k) {
+
+                    image2[i][j][k] =  (pow(image[i][j][k],.8)-120) ;
+                }
+
+            }
+        }
+    }
+     for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                for (int k = 0; k <RGB ; ++k) {
+                        image[i][j][k]=image2[i][j][k];
+
+                }
+            }
+     }
+            }
+
+
+
 
 
 
