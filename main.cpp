@@ -191,7 +191,19 @@ void shuffleImage(){
 
 
 }
+void invertFilter(){
+    // every colored pixel is turned to opposite level of brightness  (255 – pixel value)
 
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++){
+            for (int k = 0; k < RGB; ++k) {
+
+                image[i][j][k] = 255 - image[i][j][k];
+            }
+        }
+    }
+
+}
 
 void darken_lighten(){
     unsigned char image2[SIZE][SIZE][RGB];
@@ -278,7 +290,7 @@ void filterChoice(){
                     validInput = true;
                     break;
                 case 2 :
-                    //invertFilter();
+                    invertFilter();
                     validInput = true;
                     break;
                 case 3 :
