@@ -205,6 +205,53 @@ void invertFilter(){
 
 }
 
+void enlargeImage() {
+    unsigned char enlargedImage[SIZE][SIZE][RGB];
+
+    int enlargeChoice = 1;
+    cout << "\nWhich quarter to enlarge 1, 2, 3 or 4?\n";
+
+    cin >> enlargeChoice;
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            for (int k = 0; k < RGB; ++k) {
+
+                switch (enlargeChoice) {
+                    case 1 :
+                        // first quarter
+                        enlargedImage[i][j][k] = image[i / 2][j / 2][k];
+                        break;
+                    case 2 :
+                        // second quarter
+                        enlargedImage[i][j][k] = image[i / 2][SIZE / 2 + j / 2][k];
+                        break;
+                    case 3 :
+                        // third quarter
+                        enlargedImage[i][j][k] = image[SIZE / 2 + i / 2][j / 2][k];
+                        break;
+                    case 4 :
+                        // Fourth quarter
+                        enlargedImage[i][j][k] = image[SIZE / 2 + i / 2][SIZE / 2 + j / 2][k];
+                        break;
+                    default :
+                        break;
+                }
+            }
+        }
+    }
+
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; ++j) {
+            for (int k = 0; k < RGB; ++k) {
+
+
+                image[i][j][k] = enlargedImage[i][j][k];
+            }
+        }
+    }
+}
+
+
 void darken_lighten(){
     unsigned char image2[SIZE][SIZE][RGB];
     int choice ;
@@ -310,7 +357,7 @@ void filterChoice(){
                     validInput = true;
                     break;
                 case 7 :
-                    //enlargeImage();
+                    enlargeImage();
                     validInput = true;
                     break;
                 case 8 :
