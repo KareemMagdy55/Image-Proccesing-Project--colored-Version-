@@ -3,7 +3,7 @@
 #include <cmath>
 #include "bmplib.cpp"
 #include "bmplib.h"
-
+#include<cmath>
 using namespace std;
 
 
@@ -290,6 +290,35 @@ void darken_lighten(){
             }
 
 
+void merge() {
+    unsigned char image2[SIZE][SIZE][RGB];
+    unsigned char image3[SIZE][SIZE][RGB];
+    char imageFileName2[100];
+
+    cout << "Enter the source image2 file name:";
+    cin >> imageFileName2;
+
+    strcat (imageFileName2, ".bmp");
+    readRGBBMP(imageFileName2, image2);
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            for (int k = 0; k <RGB ; ++k) {
+                image3[i][j][k] = (image[i][j][k] + image2[i][j][k]) / 2 ;
+            }
+
+        }
+    }
+
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            for (int k = 0; k <RGB ; ++k) {
+                image[i][j][k] = image3[i][j][k] ;
+            }
+
+        }
+    }
+
+}
 
 
 
@@ -353,7 +382,7 @@ void filterChoice(){
                     validInput = true;
                     break;
                 case 6 :
-                    //merge();
+                    merge();
                     validInput = true;
                     break;
                 case 7 :
