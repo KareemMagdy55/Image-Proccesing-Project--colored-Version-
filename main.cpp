@@ -291,15 +291,24 @@ void darken_lighten(){
 
 
 void merge() {
+    
+    //declare our needed images 
+    
     unsigned char image2[SIZE][SIZE][RGB];
     unsigned char image3[SIZE][SIZE][RGB];
     char imageFileName2[100];
-
+    
+//input second image to merge
+    
     cout << "Enter the source image2 file name:";
     cin >> imageFileName2;
-
+    
+//adding (.bmp) to 2nd image
+    
     strcat (imageFileName2, ".bmp");
     readRGBBMP(imageFileName2, image2);
+    
+    
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
             for (int k = 0; k <RGB ; ++k) {
@@ -308,7 +317,8 @@ void merge() {
 
         }
     }
-
+    
+//for loop to put 3rd image in our original image 
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
             for (int k = 0; k <RGB ; ++k) {
