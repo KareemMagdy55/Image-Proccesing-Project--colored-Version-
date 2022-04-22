@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\Image_Proccesing.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\Image_Proccesing.dir/objects.a @CMakeFiles\Image_Proccesing.dir\objects1.rsp
+C:\MinGW\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\Image_Proccesing.dir/objects.a -Wl,--no-whole-archive -o Image_Proccesing.exe -Wl,--out-implib,libImage_Proccesing.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Image_Proccesing.dir\linklibs.rsp

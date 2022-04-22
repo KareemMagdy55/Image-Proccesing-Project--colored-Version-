@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/bmplib.cpp
+stdio.h
+-
+iostream
+-
+cstdlib
+-
+bmplib.h
+C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/bmplib.h
+
+C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/bmplib.h
+
+C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/main.cpp
+iostream
+-
+cstring
+-
+cmath
+-
+bmplib.cpp
+C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/bmplib.cpp
+bmplib.h
+C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/bmplib.h
+cmath
+-
+

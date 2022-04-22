@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.21)
-project(Image_Proccesing_Project__colored_Version_)
+cmake_minimum_required(VERSION 3.20.2)
+project(Image_Proccesing)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Image_Proccesing_Project__colored_Version_ main.cpp)
+add_executable(Image_Proccesing main.cpp)

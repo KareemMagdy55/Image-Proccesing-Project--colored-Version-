@@ -1,0 +1,13 @@
+# ninja log v5
+3	524	6709540232068389	CMakeFiles/Image_Proccesing.dir/main.cpp.obj	34fc356e31e57711
+525	672	6709540233507495	Image_Proccesing.exe	5e34ec5743b70d5a
+3	278	6720700079744168	build.ninja	ef7c298bdffda203
+4	561	6720700079744168	build.ninja	fc1bb36cb6d82570
+0	2241	6720700103329867	CMakeFiles/Image_Proccesing.dir/main.cpp.obj	34fc356e31e57711
+2241	3180	6720700112630929	Image_Proccesing.exe	5e34ec5743b70d5a
+4	670	6720701781398607	CMakeFiles/Image_Proccesing.dir/main.cpp.obj	34fc356e31e57711
+670	936	6720701784050029	Image_Proccesing.exe	5e34ec5743b70d5a
+3	649	6720705618960726	CMakeFiles/Image_Proccesing.dir/main.cpp.obj	34fc356e31e57711
+650	870	6720705621088134	Image_Proccesing.exe	5e34ec5743b70d5a
+3	694	6720878776029806	CMakeFiles/Image_Proccesing.dir/main.cpp.obj	34fc356e31e57711
+694	873	6720878777744857	Image_Proccesing.exe	5e34ec5743b70d5a

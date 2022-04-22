@@ -23,14 +23,24 @@ int main() {
 
 void loadImage () {
     char imageFileName[100];
+    bool imgValidation = false;
 
-    // Get Colored image file name
-    cout << "Enter the source image file name:";
-    cin >> imageFileName;
+    while (!imgValidation) {
+        // Get colored image file name
+        cout << "Enter the source image file name:";
+        cin >> imageFileName;
 
-    // Add to it .bmp extension and load image
-    strcat (imageFileName, ".bmp");
-    readRGBBMP(imageFileName, image);
+        // Add to it .bmp extension and load image
+        strcat(imageFileName, ".bmp");
+
+
+        if (! readRGBBMP(imageFileName, image)) {
+            imgValidation = true;
+        }
+        else { //if the Image is not valid, reRun loadImage()
+            cout << "\nImage not found, Please try again.\n";
+        }
+    }
 }
 
 
@@ -396,10 +406,162 @@ void shrink(){
 
 }
 
+void BW_filter(){
 
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+             double pixel_avg = (image[i][j][0] + image[i][j][1] + image[i][j][2])/3;
+            if (pixel_avg > 127){
+                // every pixel above 127 will be White
+                    image[i][j][0] = 255 ;
+                    image[i][j][1] = 255 ;
+                    image[i][j][2] = 255 ;
+            }else{
+                // every pixel under 127 will be White
+                    image[i][j][0] = 0 ;
+                    image[i][j][1] = 0 ;
+                    image[i][j][2] = 0 ;
+                }
+        }
+    }
 
+}
 
+void flipImage(){
+    string type_of_flip;
+    unsigned char clone[SIZE][SIZE][RGB]; //3D array that has the same size as the image
 
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            for (int k = 0; k < RGB; k++) {
+
+                clone[i][j][k] = image[i][j][k]; //copying the image pixels values into "clone" 3D array
+            }
+        }
+    }
+
+    cout << "\nFlip (H) horizontally or (V) vertically ?\n";
+    cin >> type_of_flip; // Take the type of the flip from user
+    while (true) {
+        if (type_of_flip == "h"||type_of_flip == "H") {
+            // To flip the image "Horizontally"
+            for (int i = 0; i < SIZE; i++) {
+                for (int j = 0; j < SIZE; j++) {
+                    for (int k = 0; k < RGB; k++) {
+
+                        image[i][j][k] = clone[i][255 - j][k]; //Flipping the matrix values horizontally
+                    }
+                }
+            }
+            break;//breaks the biggest loop after flipping the image horizontally
+        }
+        else if (type_of_flip == "v"||type_of_flip == "V"){
+            // To flip the image "Vertically"
+            for (int i = 0; i < SIZE; i++) {
+                for (int j = 0; j < SIZE; j++) {
+                    for (int k = 0; k < RGB; k++) {
+
+                        image[i][j][k] = clone[255 - i][j][k]; //Flipping the matrix values vertically
+                    }
+                }
+            }
+            break; //breaks the biggest loop after flipping the image vertically
+        }
+        else{
+            cout << "invalid input! please enter H or V..." << endl;
+            cin >> type_of_flip;
+        }
+    }
+
+}
+
+void detect_edges(){
+    BW_filter();
+    unsigned char clone[SIZE][SIZE][RGB]; //2D array that has the same size as the image
+
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            for (int k = 0; k < RGB; k++) {
+                clone[i][j][k] = image[i][j][k]; //copying the image pixels values into "clone" 2D array
+            }
+        }
+    }
+
+    for (int i = 1; i < 255; i++) {
+        for (int j = 1; j < 255; j++) {
+            for (int k = 0; k < RGB; k++) {
+
+                if (clone[i - 1][j - 1][k] == 0 and clone[i - 1][j][k] == 0 and clone[i - 1][j + 1][k] == 0
+                    and clone[i][j - 1][k] == 0 and clone[i][j + 1][k] == 0
+                    and clone[i + 1][j - 1][k] == 0 and clone[i + 1][j][k] == 0 and clone[i + 1][j + 1][k] == 0) {
+                    image[i][j][k] = 255;
+                }
+            }
+        }
+    }
+}
+
+void mirror(){
+
+    string type_of_mirror;
+    cout<< "\nPlease Choose type of mirror to apply to your image\n"
+        << "\nPress 1 for Left Part Mirror "
+        << "\nPress 2 for Right Part Mirror"
+        << "\nPress 3 for Upper Part Mirror"
+        << "\nPress 4 for Lower Part Mirror" << endl;
+    cin >> type_of_mirror;
+
+    while (true) {
+        if (type_of_mirror == "1") {
+            for (int i = 0; i < SIZE; i++) {
+                for (int j = 0; j < 128; j++) {
+                    for (int k = 0; k < RGB; k++) {
+
+                        image[i][255 - j][k] = image[i][j][k];
+                    }
+                }
+            }
+            break;
+        }
+        else if (type_of_mirror == "2"){
+            for (int i = 0; i < SIZE; i++) {
+                for (int j = 128; j < 256; j++) {
+                    for (int k = 0; k < RGB; k++) {
+                        image[i][255-j][k] = image[i][j][k];
+
+                    }
+                }
+            }
+            break;
+        }
+        else if (type_of_mirror == "3"){
+            for (int i = 0; i < 128; i++) {
+                for (int j = 0; j < SIZE; j++) {
+                    for (int k = 0; k < RGB; k++) {
+
+                        image[255 - i][j][k] = image[i][j][k];
+                    }
+                }
+            }
+            break;
+        }
+        else if (type_of_mirror == "4"){
+            for (int i = 128; i < 256; i++) {
+                for (int j = 0; j < SIZE; j++) {
+                    for (int k = 0; k < RGB; k++) {
+
+                        image[255 - i][j][k] = image[i][j][k];
+                    }
+                }
+            }
+            break;
+        }
+        else{
+            cout << "\n invalid input... please try again" << endl;
+            cin >> type_of_mirror;
+        }
+    }
+}
 
 void saveImage () {
     char imageFileName[100];
@@ -427,21 +589,24 @@ void filterChoice(){
                 "\nPress 6 to merge filter"
                 "\nPress 7 to enlarge the image"
                 "\nPress 8 to shuffle the image"
-                "\nPress 9 to shrink the image"
-                "\nPress 10 to save the image"
+                "\nPress 9 to blur the image"
+                "\nPress 10 to shrink the image"
+                "\nPress 11 to detect image edges"
+                "\nPress 12 to mirror image"
+                "\nPress 13 to save the image"
                 "\nPress 0 to Exit"
                 "\n-----------------------------------\n";
 
 
         cin >> filterChoice;
 
-        if (filterChoice >= 0 && filterChoice <= 10 ) {
+        if (filterChoice >= 0 && filterChoice <= 13) {
 
             switch (filterChoice) {
                 case 0 :
                     exit(0);
                 case 1:
-                    //BW_filter();
+                    BW_filter();
                     validInput = true;
                     break;
                 case 2 :
@@ -453,11 +618,11 @@ void filterChoice(){
                     validInput = true;
                     break;
                 case 4 :
-                    //flipImage();
+                    flipImage();
                     validInput = true;
                     break;
                 case 5 :
-                    darken_lighten() ;
+                    //darken_or_lighten() ;
                     validInput = true;
                     break;
                 case 6 :
@@ -473,10 +638,22 @@ void filterChoice(){
                     validInput = true;
                     break;
                 case 9 :
-                    shrink();
+                    //blurfilter();
                     validInput = true;
                     break;
                 case 10 :
+                    shrink();
+                    validInput = true;
+                    break;
+                case 11 :
+                    detect_edges();
+                    validInput = true;
+                    break;
+                case 12 :
+                    mirror();
+                    validInput = true;
+                    break;
+                case 13 :
                     saveImage();
                     validInput = true;
                     break;
@@ -486,6 +663,8 @@ void filterChoice(){
             }
         }
     }while (! validInput);
+
+
 
 
 }
