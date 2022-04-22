@@ -330,6 +330,74 @@ void merge() {
 
 }
 
+void shrink(){
+
+    unsigned char image2 [SIZE][SIZE][RGB];
+
+
+    for (int i = 0; i < SIZE; ++i) {
+        for (int j = 0; j < SIZE; ++j) {
+            for (int k = 0; k < RGB; ++k) {
+                image2[i][j][k] = 255;
+
+            }
+
+        }
+
+    }
+
+    int option ;
+    cout <<"for 1/2 shrink photo press 1 : \n";
+    cout <<"for 1/3 shrink photo press 2 : \n";
+    cout <<"for 1/4 shrink photo press 3 : \n";
+
+    cin >> option ;
+
+    if (option == 1)
+    {
+        for (int i = 0; i < SIZE; i+= 2) {
+            for (int j = 0; j < SIZE; j+= 2) {
+                for (int k = 0; k < 3; ++k) {
+                    image2[i / 2][j / 2][k] = image[i][j][k] ;
+                }
+            }
+        }
+    }
+
+    else if (option == 2)
+    {
+        for (int i = 0; i < SIZE; i+= 3) {
+            for (int j = 0; j < SIZE; j+= 3) {
+                for (int k = 0; k < RGB; ++k) {
+                    image2[i / 3][j / 3][k] = image[i][j][k] ;
+                }
+            }
+        }
+    }
+
+    else if (option == 3)
+    {
+        for (int i = 0; i < SIZE; i+= 4) {
+            for (int j = 0; j < SIZE; j+= 4) {
+                for (int k = 0; k < RGB; ++k) {
+                    image2[i / 4][j / 4][k] = image[i][j][k] ;
+                }
+            }
+        }
+    }
+
+    for (int i=0 ; i < SIZE;i++){
+        for (int j =0 ; j< SIZE;j++){
+            for (int k=0 ; k< RGB;k++){
+                image[i][j][k]=image2[i][j][k];
+            }
+        }
+    }
+
+}
+
+
+
 
 
 
@@ -359,14 +427,15 @@ void filterChoice(){
                 "\nPress 6 to merge filter"
                 "\nPress 7 to enlarge the image"
                 "\nPress 8 to shuffle the image"
-                "\nPress 9 to save the image"
+                "\nPress 9 to shrink the image"
+                "\nPress 10 to save the image"
                 "\nPress 0 to Exit"
                 "\n-----------------------------------\n";
 
 
         cin >> filterChoice;
 
-        if (filterChoice >= 0 && filterChoice <= 9 ) {
+        if (filterChoice >= 0 && filterChoice <= 10 ) {
 
             switch (filterChoice) {
                 case 0 :
@@ -404,6 +473,10 @@ void filterChoice(){
                     validInput = true;
                     break;
                 case 9 :
+                    shrink();
+                    validInput = true;
+                    break;
+                case 10 :
                     saveImage();
                     validInput = true;
                     break;
