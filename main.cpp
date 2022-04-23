@@ -1,22 +1,51 @@
+/*
+       FCI – Programming 1 – 2022 - Assignment 3
+
+        Program Name: Bonus.cpp
+        Last Modification Date: 22/04/2022
+
+        Author1 : Abdullah Ibrahim  ID : 20210590
+        Author2 : Kareem Magdy      ID : 20211071
+        Author3 : Mohammed Reyad    ID : 20211074
+
+        Teaching Assistant: Eng. Afaf Abdelmonem
+
+        Purpose: Colored-RGB image processor allows you to load an image and
+                 apply some filters or changes to it, then save it again.
+*/
+
 #include <iostream>
 #include <cstring>
 #include <cmath>
 #include "bmplib.cpp"
 #include "bmplib.h"
 #include<cmath>
+
 using namespace std;
-
-
 unsigned char image[SIZE][SIZE][RGB];
 
-void loadImage ();
-void filterChoice();
-void saveImage ();
+void loadImage ();  // To load the image from the program file path
+void filterChoice();// Makes the user choose which filter to apply to his image
+void saveImage ();  // To save the edited image to the program file path
+// All 12 filters:
+void BW_filter();
+void flipImage();
+void detect_edges();
+void mirror();
+void shrink();
+void blur();
+void shuffleImage();
+void enlargeImage();
+void merge();
+void darken_lighten() ;
+void rotateImage();
+void invertFilter();
+
 
 int main() {
     loadImage();
     while (1) {
-        filterChoice();
+        filterChoice(); //Endless loop as the user can choose to exit the program
     }
 }
 
@@ -201,6 +230,7 @@ void shuffleImage(){
 
 
 }
+
 void invertFilter(){
     // every colored pixel is turned to opposite level of brightness  (255 – pixel value)
 
@@ -289,36 +319,36 @@ void darken_lighten(){
             }
         }
     }
-     for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
-                for (int k = 0; k <RGB ; ++k) {
-                        image[i][j][k]=image2[i][j][k];
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            for (int k = 0; k <RGB ; ++k) {
+                image[i][j][k]=image2[i][j][k];
 
-                }
             }
-     }
-            }
+        }
+    }
+}
 
 
 void merge() {
-    
-    //declare our needed images 
-    
+
+    //declare our needed images
+
     unsigned char image2[SIZE][SIZE][RGB];
     unsigned char image3[SIZE][SIZE][RGB];
     char imageFileName2[100];
-    
+
 //input second image to merge
-    
+
     cout << "Enter the source image2 file name:";
     cin >> imageFileName2;
-    
+
 //adding (.bmp) to 2nd image
-    
+
     strcat (imageFileName2, ".bmp");
     readRGBBMP(imageFileName2, image2);
-    
-    
+
+
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
             for (int k = 0; k <RGB ; ++k) {
@@ -327,8 +357,8 @@ void merge() {
 
         }
     }
-    
-//for loop to put 3rd image in our original image 
+
+//for loop to put 3rd image in our original image
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
             for (int k = 0; k <RGB ; ++k) {
@@ -407,40 +437,47 @@ void shrink(){
 }
 
 void BW_filter(){
+    //This filter turns a colored image to a 2 shades image (black and white)
+    //white colored pixel --> Red = 255, Green = 255, Blue = 255
+    //black colored pixel --> Red = 0, Green = 0, Blue = 0
 
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
-             double pixel_avg = (image[i][j][0] + image[i][j][1] + image[i][j][2])/3;
+            //Average values of the three colors of a pixel:
+            double pixel_avg = (image[i][j][0] + image[i][j][1] + image[i][j][2])/3;
+
             if (pixel_avg > 127){
-                // every pixel above 127 will be White
-                    image[i][j][0] = 255 ;
-                    image[i][j][1] = 255 ;
-                    image[i][j][2] = 255 ;
+                // every pixel above 127 will be white colored pixel
+                image[i][j][0] = 255 ;
+                image[i][j][1] = 255 ;
+                image[i][j][2] = 255 ;
             }else{
-                // every pixel under 127 will be White
-                    image[i][j][0] = 0 ;
-                    image[i][j][1] = 0 ;
-                    image[i][j][2] = 0 ;
-                }
+                // every pixel under 127 will be black colored pixel
+                image[i][j][0] = 0 ;
+                image[i][j][1] = 0 ;
+                image[i][j][2] = 0 ;
+            }
         }
     }
 
 }
 
 void flipImage(){
+    //This filter allows the user to flip the image
+    //horizontally or vertically, as if it is reflected on mirror
     string type_of_flip;
     unsigned char clone[SIZE][SIZE][RGB]; //3D array that has the same size as the image
 
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
             for (int k = 0; k < RGB; k++) {
-
-                clone[i][j][k] = image[i][j][k]; //copying the image pixels values into "clone" 3D array
+                //copying the image pixels values into "clone" 3D array
+                clone[i][j][k] = image[i][j][k];
             }
         }
     }
 
-    cout << "\nFlip (H) horizontally or (V) vertically ?\n";
+    cout << "\nFlip (H)orizontally or (V)ertically ?\n";
     cin >> type_of_flip; // Take the type of the flip from user
     while (true) {
         if (type_of_flip == "h"||type_of_flip == "H") {
@@ -468,6 +505,7 @@ void flipImage(){
             break; //breaks the biggest loop after flipping the image vertically
         }
         else{
+            //if the user did not enter (H or V) it asks him to re-enter type_of_flip again
             cout << "invalid input! please enter H or V..." << endl;
             cin >> type_of_flip;
         }
@@ -476,13 +514,18 @@ void flipImage(){
 }
 
 void detect_edges(){
-    BW_filter();
-    unsigned char clone[SIZE][SIZE][RGB]; //2D array that has the same size as the image
+    //This function finds the edges of the drawings in the image and turns the
+    //image into a skeleton version of the original as if it is drawn with pencil
+    //without coloring (black and white version but only edges are black colored)
+
+    BW_filter(); //turn the image into Black and White Image
+    unsigned char clone[SIZE][SIZE][RGB]; //3D array that has the same size as the image
 
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
             for (int k = 0; k < RGB; k++) {
-                clone[i][j][k] = image[i][j][k]; //copying the image pixels values into "clone" 2D array
+                //copying the image pixels values into "clone" 3D array
+                clone[i][j][k] = image[i][j][k];
             }
         }
     }
@@ -491,6 +534,9 @@ void detect_edges(){
         for (int j = 1; j < 255; j++) {
             for (int k = 0; k < RGB; k++) {
 
+                //In the B&W version, this if statement checks if all pixels around the
+                //current pixel are black pixels, and if so
+                //it turns the current pixel into a white colored pixel
                 if (clone[i - 1][j - 1][k] == 0 and clone[i - 1][j][k] == 0 and clone[i - 1][j + 1][k] == 0
                     and clone[i][j - 1][k] == 0 and clone[i][j + 1][k] == 0
                     and clone[i + 1][j - 1][k] == 0 and clone[i + 1][j][k] == 0 and clone[i + 1][j + 1][k] == 0) {
@@ -502,54 +548,56 @@ void detect_edges(){
 }
 
 void mirror(){
+    //This filter mirrors any half of the image
+    //Left half, Right half, Upper half, or Lower half.
 
     string type_of_mirror;
     cout<< "\nPlease Choose type of mirror to apply to your image\n"
-        << "\nPress 1 for Left Part Mirror "
-        << "\nPress 2 for Right Part Mirror"
-        << "\nPress 3 for Upper Part Mirror"
-        << "\nPress 4 for Lower Part Mirror" << endl;
+        << "\nPress 1 for Left Half "
+        << "\nPress 2 for Right Half"
+        << "\nPress 3 for Upper Half"
+        << "\nPress 4 for Lower Half" << endl;
     cin >> type_of_mirror;
 
     while (true) {
-        if (type_of_mirror == "1") {
+        if (type_of_mirror == "1") { //Left Half Mirror
             for (int i = 0; i < SIZE; i++) {
                 for (int j = 0; j < 128; j++) {
                     for (int k = 0; k < RGB; k++) {
-
+                        //copying pixels of the left half into the right half in a flipped order
                         image[i][255 - j][k] = image[i][j][k];
                     }
                 }
             }
             break;
         }
-        else if (type_of_mirror == "2"){
+        else if (type_of_mirror == "2"){ //Right Half Mirror
             for (int i = 0; i < SIZE; i++) {
                 for (int j = 128; j < 256; j++) {
                     for (int k = 0; k < RGB; k++) {
+                        //copying pixels of the right half into the left half in a flipped order
                         image[i][255-j][k] = image[i][j][k];
-
                     }
                 }
             }
             break;
         }
-        else if (type_of_mirror == "3"){
+        else if (type_of_mirror == "3"){ //Upper Half Mirror
             for (int i = 0; i < 128; i++) {
                 for (int j = 0; j < SIZE; j++) {
                     for (int k = 0; k < RGB; k++) {
-
+                        //copying pixels of the upper half into the lower half in a flipped order
                         image[255 - i][j][k] = image[i][j][k];
                     }
                 }
             }
             break;
         }
-        else if (type_of_mirror == "4"){
+        else if (type_of_mirror == "4"){ //Lower Half Mirror
             for (int i = 128; i < 256; i++) {
                 for (int j = 0; j < SIZE; j++) {
                     for (int k = 0; k < RGB; k++) {
-
+                        //copying pixels of the lower half into the upper half in a flipped order
                         image[255 - i][j][k] = image[i][j][k];
                     }
                 }
@@ -557,6 +605,7 @@ void mirror(){
             break;
         }
         else{
+            //if the user did not enter (1 - 4) it asks him to re-enter type_of_mirror again
             cout << "\n invalid input... please try again" << endl;
             cin >> type_of_mirror;
         }
@@ -591,6 +640,7 @@ void saveImage () {
     strcat (imageFileName, ".bmp");
     writeRGBBMP(imageFileName, image);
 }
+
 void filterChoice(){
     bool validInput = false ;
 

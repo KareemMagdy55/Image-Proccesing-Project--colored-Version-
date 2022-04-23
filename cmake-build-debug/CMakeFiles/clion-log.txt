@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" "C:\Users\20102\Desktop\Assignment3\My Team\Image-Proccesing-Project--colored-Version-"
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" "C:\Users\20102\Desktop\Assignment3\My Team\NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW"
 -- The C compiler identification is GNU 6.3.0
 -- The CXX compiler identification is GNU 6.3.0
 -- Detecting C compiler ABI info
@@ -13,4 +13,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug
+-- Build files have been written to: C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug

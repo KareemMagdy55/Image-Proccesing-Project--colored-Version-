@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug"/>
+				<Option working_dir="C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug"/>
+				<Option working_dir="C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Image_Proccesing">
-				<Option output="C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug/Image_Proccesing.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug"/>
+				<Option output="C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug/Image_Proccesing.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -43,15 +43,15 @@
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug/Makefile&quot;  VERBOSE=1 Image_Proccesing"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug/Makefile&quot;  VERBOSE=1 Image_Proccesing"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Image_Proccesing/fast">
-				<Option output="C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug/Image_Proccesing.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug"/>
+				<Option output="C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug/Image_Proccesing.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -65,27 +65,27 @@
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug/Makefile&quot;  VERBOSE=1 Image_Proccesing/fast"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug/Makefile&quot;  VERBOSE=1 Image_Proccesing/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug"/>
+				<Option working_dir="C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/main.cpp">
+		<Unit filename="C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/main.cpp">
 			<Option target="Image_Proccesing"/>
 		</Unit>
-		<Unit filename="C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/CMakeLists.txt">
+		<Unit filename="C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

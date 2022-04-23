@@ -1,3 +1,3 @@
-C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug/CMakeFiles/Image_Proccesing.dir
-C:/Users/20102/Desktop/Assignment3/My Team/Image-Proccesing-Project--colored-Version-/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug/CMakeFiles/Image_Proccesing.dir
+C:/Users/20102/Desktop/Assignment3/My Team/NNNNNNNNEEEEEEEWWWWWWWWWWWWWWWWW/cmake-build-debug/CMakeFiles/rebuild_cache.dir
