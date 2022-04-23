@@ -598,7 +598,7 @@ void filterChoice(){
         int filterChoice = 0;
         cout << "\n-----------------------------------\n"
                 "Please Choose a filter to apply it to your image\n"
-                "\nPress 1 for Black & White filter "
+                "\nPress 1 to save the image"
                 "\nPress 2 for Invert image filter"
                 "\nPress 3 to rotate image filter"
                 "\nPress 4 to flip image filter"
@@ -610,7 +610,7 @@ void filterChoice(){
                 "\nPress 10 to shrink the image"
                 "\nPress 11 to detect image edges"
                 "\nPress 12 to mirror image"
-                "\nPress 13 to save the image"
+                "\nPress 13 for Black & White filter "
                 "\nPress 0 to Exit"
                 "\n-----------------------------------\n";
 
@@ -622,8 +622,8 @@ void filterChoice(){
             switch (filterChoice) {
                 case 0 :
                     exit(0);
-                case 1:
-                    BW_filter();
+                case 1 :
+                    saveImage();
                     validInput = true;
                     break;
                 case 2 :
@@ -639,7 +639,7 @@ void filterChoice(){
                     validInput = true;
                     break;
                 case 5 :
-                    //darken_or_lighten() ;
+                    darken_lighten() ;
                     validInput = true;
                     break;
                 case 6 :
@@ -670,8 +670,8 @@ void filterChoice(){
                     mirror();
                     validInput = true;
                     break;
-                case 13 :
-                    saveImage();
+                case 13:
+                    BW_filter();
                     validInput = true;
                     break;
                 default:
