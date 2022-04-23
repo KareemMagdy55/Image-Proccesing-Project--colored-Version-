@@ -73,14 +73,16 @@ void loadImage () {
 }
 
 
-// Add Your filters here, then unComment your filter function in filter choice function or Add it .
+
 
 void rotateImage(){
-
+       
     unsigned char newImage[SIZE][SIZE][RGB];
     int rotationChoice = 1 ;
     cout << "Press 1 for 90 degree rotation\nPress 2 for 180 degree rotation\nPress 3 for 270 degree rotation";
     cin >> rotationChoice;
+       
+       
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
             for (int k = 0; k < RGB; ++k) {
@@ -126,14 +128,17 @@ bool isShuffleValid(string& word){
 
 }
 void shuffleImage(){
+    // The Shuffle image filter allows the user to rearrange the image four quarters in the order he want .
     unsigned char shuffledImage[SIZE][SIZE][RGB];
 
     string userShuffle ;
     cout << "Please enter your shuffle order:";
     cin >> userShuffle;
 
+    // check if the shuffle order user entered is valid or not .
     while (!isShuffleValid(userShuffle) && userShuffle.length() != 4){
         cout << "\nInvalid shuffle order, please re-enter a valid one :\n";
+        cin >> userShuffle;
 
     }
 
@@ -246,6 +251,8 @@ void invertFilter(){
 }
 
 void enlargeImage() {
+       // The Enlarge filter lets user extract one of the four picture quadrants into a single 256 * 256 image.
+       
     unsigned char enlargedImage[SIZE][SIZE][RGB];
 
     int enlargeChoice = 1;
