@@ -78,10 +78,16 @@ void loadImage () {
 void rotateImage(){
        
     unsigned char newImage[SIZE][SIZE][RGB];
+       
     int rotationChoice = 1 ;
     cout << "Press 1 for 90 degree rotation\nPress 2 for 180 degree rotation\nPress 3 for 270 degree rotation";
     cin >> rotationChoice;
        
+    while (rotationChoice < 1 || rotationChoice > 3){
+           
+           cout << "\nInvalid input, please re-enter a valid one :\n";
+           cin >> rotationChoice;
+    }     
        
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
@@ -255,10 +261,16 @@ void enlargeImage() {
        
     unsigned char enlargedImage[SIZE][SIZE][RGB];
 
-    int enlargeChoice = 1;
+    int enlargeChoice = 1 ;
     cout << "\nWhich quarter to enlarge 1, 2, 3 or 4?\n";
-
     cin >> enlargeChoice;
+       
+    while (enlargeChoice < 1 || enlargeChoice > 4){
+           
+           cout << "\nInvalid input, please re-enter a valid one :\n";
+           cin >> enlargeChoice;
+    }   
+       
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
             for (int k = 0; k < RGB; ++k) {
