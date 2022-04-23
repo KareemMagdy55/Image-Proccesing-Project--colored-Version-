@@ -563,6 +563,23 @@ void mirror(){
     }
 }
 
+void blur(){
+    long long avg=0;
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            for (int m=0;m<3;m++){
+                for (int k = i; k < i+7; k++) {
+                    for (int l = j; l < j+7; l++)
+                        avg+=(image[k][l][m]);
+                }
+                avg=avg/49;
+                image[i][j][m]=avg;
+                avg=0;
+            }
+        }
+    }
+}
+
 void saveImage () {
     char imageFileName[100];
 
@@ -638,7 +655,7 @@ void filterChoice(){
                     validInput = true;
                     break;
                 case 9 :
-                    //blurfilter();
+                    blur();
                     validInput = true;
                     break;
                 case 10 :
