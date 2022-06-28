@@ -1,14 +1,4 @@
 /*
-       FCI – Programming 1 – 2022 - Assignment 3
-
-        Program Name: Bonus.cpp
-        Last Modification Date: 23/04/2022
-
-        Author1 : Abdullah Ibrahim  ID : 20210590
-        Author2 : Kareem Magdy      ID : 20211071
-        Author3 : Mohammed Reyad    ID : 20211074
-
-        Teaching Assistant: Eng. Afaf Abdelmonem
 
         Purpose: Colored-RGB image processor allows you to load an image and
                  apply some filters or changes to it, then save it again.
